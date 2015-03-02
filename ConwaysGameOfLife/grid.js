@@ -8,7 +8,7 @@
             var random = Math.random();
             var value = CELLSTATE.dead;
             if (doPrefill) {
-                value = (random < 0.5) ? CELLSTATE.dead : CELLSTATE.alive;
+                value = (random < (1 - SETTINGS.startpercentageOfLiveCells)) ? CELLSTATE.dead : CELLSTATE.alive;
             }
             this.gridArray[i][j] = value;
         }
@@ -28,9 +28,6 @@ Grid.prototype = {
             throw new Error("One of the paramters are out of bounds. Size of the grid is " + this._size + ".")
         }
         this.gridArray[x][y] = value;
-    },
-    setEntireGrid: function (grid) {
-        this.gridArray = grid;
     },
     numberOfNeighbours: function (x, y) {
         var numberOfNeighbours = 0;

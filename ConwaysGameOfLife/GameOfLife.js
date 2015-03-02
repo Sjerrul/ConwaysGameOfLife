@@ -5,6 +5,7 @@
 
 var SETTINGS = {
     gridSize: 50,
+    startpercentageOfLiveCells: 0.3,
     gameFps: 2,
 
     //RenderStuff
@@ -12,7 +13,6 @@ var SETTINGS = {
     canvasWidth: 500,
     canvasHeight: 500,
     cellSize: 10,
-
 }
 
 function GameOfLife() {
